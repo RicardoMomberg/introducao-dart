@@ -1,25 +1,51 @@
 import 'package:introducao_dart/logic.dart' as introducao_dart;
+import 'package:introducao_dart/aula2/produto.dart';
 
 void main(List<String> arguments) {
+  // ******TRABALHANDO COM CLASSES******
+  // Criando uma instância da classe Produto
+  // A classe Produto possui um construtor que exige os parâmetros nome, id e cor
+  // Produto produtoObjeto = Produto(
+  //   nome: "Notebook", 
+  //   id: 1, 
+  //   cor: "Preto"
+  // );
+  // produtoObjeto.detalhesProduto();
+
+  Eletronico eletronicoObjeto = Eletronico(
+    marca: "Dell",
+    garantiaMeses: 12,
+    nomeParametro: "Notebook Dell",
+    idParametro: 2,
+    corParametro: "Prata"
+  );
+
+  eletronicoObjeto.detalhesProduto();
+
+
+
+
+
+
   // ******TRABALHANDO COM MAPS******
-  Map<String, dynamic> estruturaPessoa = {
-    "nome": "João",
-    "idade": 30,
-    "endereco": "Rua A, 123",
-    "conjuge": {
-      "nome": "Maria",
-    },
-    "telefones": [
-      {
-        "residencial": "123456789",
-      },
-      {
-        "celular": "987654321",
-      }
-    ]
-  };
-  String nomeConjuge = estruturaPessoa['conjuge']['nome'];
-  print(nomeConjuge);
+  // Map<String, dynamic> estruturaPessoa = {
+  //   "nome": "João",
+  //   "idade": 30,
+  //   "endereco": "Rua A, 123",
+  //   "conjuge": {
+  //     "nome": "Maria",
+  //   },
+  //   "telefones": [
+  //     {
+  //       "residencial": "123456789",
+  //     },
+  //     {
+  //       "celular": "987654321",
+  //     }
+  //   ]
+  // };
+  // String nomeConjuge = estruturaPessoa['conjuge']['nome'];
+  // print(nomeConjuge);
 
 
 
