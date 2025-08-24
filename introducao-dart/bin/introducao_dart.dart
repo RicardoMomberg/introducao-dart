@@ -13,17 +13,26 @@ Future<String> fetchData() {
   // });
 }
 
-void main(List<String> arguments) {
+void main(List<String> arguments) async {
   // ******TRABALHANDO COM FUTURES E ASYNC AWAIT******
-  // Chamando a função fetchData e lidando com o Future retornado usando then e catchError
   print("Inicializando a requisição");
-  fetchData().then((valorRetornado) {
-    print(valorRetornado);
-  }).catchError((error) {
-    print("error: " + error.toString());
-  });
+
+  try {
+    String data = await fetchData();
+    print(data);
+  } catch (e) {
+    print("error: " + e.toString());
+  }
+
+  // Chamando a função fetchData e lidando com o Future retornado usando then e catchError
+  // fetchData().then((valorRetornado) {
+  //   print(valorRetornado);
+  // }).catchError((error) {
+  //   print("error: " + error.toString());
+  // });
 
   print("final da requisição");
+
 
 
 
