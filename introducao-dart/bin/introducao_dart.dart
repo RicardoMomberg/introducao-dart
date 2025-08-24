@@ -5,25 +5,54 @@ import 'package:introducao_dart/aula2/produto.dart';
 import 'package:introducao_dart/aula2/sistema_loja.dart';
 import 'package:introducao_dart/logic.dart' as introducao_dart;
 
+// Simulando uma requisição assíncrona que retorna uma String após 2 segundos
+Future<String> fetchData() {
+  return Future.error({"mensagem": "erro na requisição"});
+  // return Future.delayed(Duration(seconds: 2), () {
+  //   return "Dados carregados";
+  // });
+}
+
 void main(List<String> arguments) {
-  SistemaLoja sistemaObjeto = SistemaLoja(pedidos: []);
+  // ******TRABALHANDO COM FUTURES E ASYNC AWAIT******
+  // Chamando a função fetchData e lidando com o Future retornado usando then e catchError
+  print("Inicializando a requisição");
+  fetchData().then((valorRetornado) {
+    print(valorRetornado);
+  }).catchError((error) {
+    print("error: " + error.toString());
+  });
 
-  Cliente clienteObjeto = Cliente(nome: 'José', email: 'jose@email.com');
+  print("final da requisição");
 
-  List<Produto> carrinho = [];
-  Livro livroObjeto = Livro(autor: 'Autor Exemplo', idParametro: 3, nomeParametro: 'Livro Exemplo', precoParametro: 49.90);
-  Produto produtoObjeto = Produto(nome: 'caixa', id: 1, preco: 10.50);
-  Produto produto2Objeto = Produto(nome: 'papel', id: 2, preco: 20.00);
 
-  carrinho.add(produtoObjeto);
-  carrinho.add(produto2Objeto);
-  carrinho.add(livroObjeto);
 
-  Pedido pedidoObjeto = Pedido(cliente: clienteObjeto, items: carrinho);
 
-  sistemaObjeto.adicionarPedido(pedidoObjeto);
 
-  sistemaObjeto.listaPedidos();
+  // // ******TRABALHANDO COM LOJA******
+  // // Criando uma instância da classe SistemaLoja
+  // SistemaLoja sistemaObjeto = SistemaLoja(pedidos: []);
+  // // Criando uma instância da classe Cliente
+  // Cliente clienteObjeto = Cliente(nome: 'José', email: 'jose@email.com');
+  // // Criando uma lista de produtos (carrinho de compras)
+  // // A lista pode conter produtos e livros, pois a classe Livro herda da classe Produto
+  // List<Produto> carrinho = [];
+  // Livro livroObjeto = Livro(autor: 'Autor Exemplo', idParametro: 3, nomeParametro: 'Livro Exemplo', precoParametro: 49.90);
+  // Produto produtoObjeto = Produto(nome: 'caixa', id: 1, preco: 10.50);
+  // Produto produto2Objeto = Produto(nome: 'papel', id: 2, preco: 20.00);
+  // // Adicionando produtos ao carrinho
+  // carrinho.add(produtoObjeto);
+  // carrinho.add(produto2Objeto);
+  // carrinho.add(livroObjeto);
+  // // Criando uma instância da classe Pedido
+  // // A classe Pedido possui um construtor que exige os parâmetros cliente e items
+  // Pedido pedidoObjeto = Pedido(cliente: clienteObjeto, items: carrinho);
+  // // Adicionando o pedido ao sistema
+  // sistemaObjeto.adicionarPedido(pedidoObjeto);
+  // // Listando os pedidos do sistema
+  // // A função listaPedidos() está dentro da classe SistemaLoja
+  // sistemaObjeto.listaPedidos();
+
 
 
 
