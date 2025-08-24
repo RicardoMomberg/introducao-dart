@@ -1,31 +1,54 @@
-import 'package:introducao_dart/logic.dart' as introducao_dart;
+import 'package:introducao_dart/aula2/cliente.dart';
+import 'package:introducao_dart/aula2/livros.dart';
+import 'package:introducao_dart/aula2/pedido.dart';
 import 'package:introducao_dart/aula2/produto.dart';
+import 'package:introducao_dart/aula2/sistema_loja.dart';
+import 'package:introducao_dart/logic.dart' as introducao_dart;
 
 void main(List<String> arguments) {
+  SistemaLoja sistemaObjeto = SistemaLoja(pedidos: []);
+
+  Cliente clienteObjeto = Cliente(nome: 'José', email: 'jose@email.com');
+
+  List<Produto> carrinho = [];
+  Livro livroObjeto = Livro(autor: 'Autor Exemplo', idParametro: 3, nomeParametro: 'Livro Exemplo', precoParametro: 49.90);
+  Produto produtoObjeto = Produto(nome: 'caixa', id: 1, preco: 10.50);
+  Produto produto2Objeto = Produto(nome: 'papel', id: 2, preco: 20.00);
+
+  carrinho.add(produtoObjeto);
+  carrinho.add(produto2Objeto);
+  carrinho.add(livroObjeto);
+
+  Pedido pedidoObjeto = Pedido(cliente: clienteObjeto, items: carrinho);
+
+  sistemaObjeto.adicionarPedido(pedidoObjeto);
+
+  sistemaObjeto.listaPedidos();
+
+
+
+
+
+
   // ******TRABALHANDO COM CLASSES******
   // Criando uma instância da classe Produto
   // A classe Produto possui um construtor que exige os parâmetros nome, id e cor
   // Produto produtoObjeto = Produto(
-  //   nome: "Notebook", 
-  //   id: 1, 
+  //   nome: "Notebook",
+  //   id: 1,
   //   cor: "Preto"
   // );
   // produtoObjeto.detalhesProduto();
 
-  Eletronico eletronicoObjeto = Eletronico(
-    marca: "Dell",
-    garantiaMeses: 12,
-    nomeParametro: "Notebook Dell",
-    idParametro: 2,
-    corParametro: "Prata"
-  );
+  // Eletronico eletronicoObjeto = Eletronico(
+  //   marca: "Dell",
+  //   garantiaMeses: 12,
+  //   nomeParametro: "Notebook Dell",
+  //   idParametro: 2,
+  //   corParametro: "Prata"
+  // );
 
-  eletronicoObjeto.detalhesProduto();
-
-
-
-
-
+  // eletronicoObjeto.detalhesProduto();
 
   // ******TRABALHANDO COM MAPS******
   // Map<String, dynamic> estruturaPessoa = {
@@ -47,9 +70,6 @@ void main(List<String> arguments) {
   // String nomeConjuge = estruturaPessoa['conjuge']['nome'];
   // print(nomeConjuge);
 
-
-
-
   // ******TRABALHANDO COM SETS******
   // var lista = <int>[];
   // var collection = <int>{};
@@ -65,9 +85,6 @@ void main(List<String> arguments) {
   // print(collection);
   // print(lista);
 
-
-
-
   // ******TRABALHANDO COM RECORDS******
   // List<int> numerosPares = [];
   // numerosPares.add(4);
@@ -78,34 +95,26 @@ void main(List<String> arguments) {
   //   print("item: " + item.toString());
   // }
 
-
-
   // ******TRABALHANDO COM RECORDS******
   // int numero = 11;
   // final(texto, outronumero) = introducao_dart.exemploRecords(numero);
   // print("texto: " + texto + " numero: " + outronumero.toString());
-
-
 
   // ******TRABALHANDO COM BOOLEANOS******
   // bool valor1 = true;
   // bool valor2 = false;
   // if(valor1 == true) {
   //   print("valor1 é verdadeiro");
-  // } 
+  // }
   // if(valor2 == true) {
   //   print("valor2 é verdadeiro");
   // }
-
-
 
   // ******TRABALHANDO COM TEXTOS******
   // String nome = "João";
   // String sobrenome = " da Silva";
   // String resultado = introducao_dart.concatenarNome(nome, sobrenome);
   // print(resultado);
-
-
 
   // ******TRABALHANDO COM NÚMEROS******
   // int numero1 = 2;
@@ -114,5 +123,4 @@ void main(List<String> arguments) {
   // double numero3 = 2.5;
   // double numero4 = 2.5;
   // print('resultado inteiro: ${introducao_dart.multiplicacaoNumerosDecimais(numero3,numero4)}!');
-
 }
