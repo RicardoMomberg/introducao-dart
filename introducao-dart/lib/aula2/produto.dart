@@ -38,4 +38,14 @@ class Eletronico extends Produto {
     print("marca: " + this.marca);
     print("garantia: " + this.garantiaMeses.toString());
   }
+
+  // Polimorfismo - Sobrescrevendo o método detalhesProduto da classe pai (Produto) 
+  // para exibir detalhes adicionais da classe Eletronico
+  @override
+  void detalhesProduto() {
+    // Chama o método detalhesProduto da classe pai (Produto)
+    super.detalhesProduto();
+    // Chama o método privado da classe Eletronico para exibir detalhes adicionais
+    _detalhesEletronico();
+  }
 }
