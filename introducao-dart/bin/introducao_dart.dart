@@ -7,9 +7,8 @@ import 'package:introducao_dart/aula2/sistema_loja.dart';
 import 'package:introducao_dart/logic.dart' as introducao_dart;
 import 'package:my_simple_package/my_simple_package.dart';
 
-void main(List<String> arguments) {
+void main(List<String> arguments) async {
   print("inicializando a aplicação...");
 
-  var mensagem = saudacoes("José Fulano");
-  print(mensagem);
+  await fetchData();
 }

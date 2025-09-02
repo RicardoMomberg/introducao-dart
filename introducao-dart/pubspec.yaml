@@ -8,13 +8,10 @@ environment:
 
 # Add regular dependencies here.
 dependencies:
-  path: ^1.9.0
+  # path: ^1.9.0
   intl: ^0.20.2
   my_simple_package:
-    git:
-      url: https://github.com/RicardoMomberg/introducao-dart.git
-      path: ./introducao-dart/packages/my_simple_package
-      ref: main
+    path: ./packages/my_simple_package
 
 dev_dependencies:
   lints: ^6.0.0
