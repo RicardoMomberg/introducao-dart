@@ -5,26 +5,21 @@ import 'package:introducao_dart/aula2/produto.dart';
 import 'package:introducao_dart/aula2/sistema_loja.dart';
 import 'package:introducao_dart/logic.dart' as introducao_dart;
 
-// Simulando uma requisição assíncrona que retorna uma String após 2 segundos
-Future<String> fetchData() {
-  return Future.error({"mensagem": "erro na requisição"});
-  // return Future.delayed(Duration(seconds: 2), () {
-  //   return "Dados carregados";
-  // });
+Stream<int> generateNumbers() async* {
+  for (var i = 1; i <= 5; i++) {
+    await Future.delayed(Duration(seconds: 1));
+    yield i;
+  }
 }
 
 void main(List<String> arguments) async {
   // ******TRABALHANDO COM FUTURES E ASYNC AWAIT******
-  print("Inicializando a requisição");
+  print("Inicializando geração de números...");
 
-  try {
-    String data = await fetchData();
-    print(data);
-  } catch (e) {
-    print("error: " + e.toString());
+  await for (int number in generateNumbers()) {
+    print("número gerado: " + number.toString());
   }
 
-  // Chamando a função fetchData e lidando com o Future retornado usando then e catchError
   // fetchData().then((valorRetornado) {
   //   print(valorRetornado);
   // }).catchError((error) {
@@ -32,6 +27,7 @@ void main(List<String> arguments) async {
   // });
 
   print("final da requisição");
+
 
 
 
