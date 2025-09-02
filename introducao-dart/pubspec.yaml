@@ -13,7 +13,7 @@ dependencies:
   my_simple_package:
     git:
       url: https://github.com/RicardoMomberg/introducao-dart.git
-      path: ./packages/my-simple-package
+      path: ./introducao-dart/packages/my_simple_package
       ref: main
 
 dev_dependencies:
