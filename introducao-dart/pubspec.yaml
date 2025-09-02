@@ -10,9 +10,9 @@ environment:
 dependencies:
   path: ^1.9.0
   intl: ^0.20.2
-  my_simple_package: 
-    git: 
-      url: https://github.com/RicardoMomberg/introducao-dart
+  my_simple_package:
+    git:
+      url: https://github.com/RicardoMomberg/introducao-dart.git
       path: ./packages/my-simple-package
       ref: main
 
