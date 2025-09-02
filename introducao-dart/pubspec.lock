@@ -193,6 +193,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.0"
+  my_simple_package:
+    dependency: "direct main"
+    description:
+      path: "packages/my-simple-package"
+      relative: true
+    source: path
+    version: "1.0.0"
   node_preamble:
     dependency: transitive
     description:
